@@ -10,11 +10,11 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #172031;
+  background: #267d81;
 }
 
 .login {
-  background: rgba(0,0,0.5);
+  background:#1b4244;
   border-radius: 10px;
   width: 400px;
   padding: 40px;
@@ -83,7 +83,7 @@ body{
   margin-top: 20px;
   transition: .5s;
   overflow: hidden;
-  background: black;
+  background: #244041;
 }
 
 .btn:hover{
@@ -91,7 +91,6 @@ body{
   border-radius: 5px;
   color: #172031;
 }
-
 
 
 

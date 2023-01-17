@@ -1,6 +1,5 @@
 
- const novoCadastros = buscarDadosDoLocalStorage('usuarios') 
-console.log(novoCadastros) 
+ const novoCadastros = buscarDadosDoLocalStorage('usuarios')
 
 const formularioHTML = document.getElementById('formulario-cadastro');
 
@@ -33,10 +32,12 @@ formularioHTML.addEventListener('submit', (evento) => {
         usuario:usuario ,
         senha: senha,
         recados: []
+      
         
     }
 
     novoCadastros.push(cadastro)
+
     guardarNoLocalStorage('usuarios', novoCadastros)
 
 

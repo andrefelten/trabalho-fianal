@@ -14,9 +14,13 @@ formularioHTML.addEventListener('submit', (evento) => {
         alert('Usuario ou senha estão incorretos ou não existem')
         return
     } else{
+
+        guardarNoLocalStorage('usuarioLogado', usuarioEncontrado)
         
      window.location.href = "./recados.html"
     }
+
+    
 
 })
 
