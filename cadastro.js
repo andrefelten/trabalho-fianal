@@ -1,5 +1,5 @@
 
- const novoCadastros = buscarDadosDoLocalStorage('usuarios')
+const novoCadastros = buscarDadosDoLocalStorage('usuarios')
 
 const formularioHTML = document.getElementById('formulario-cadastro');
 
@@ -11,29 +11,29 @@ formularioHTML.addEventListener('submit', (evento) => {
     const senha = document.getElementById('senha').value
     const verificacao = document.getElementById('varificacao').value
 
-    if(senha !== verificacao){
+    if (senha !== verificacao) {
         alert('As senhas devem ser iguais')
         return
     }
 
 
-        
-    const existe = novoCadastros.some((valor) => valor.usuario === usuario) 
-    if(existe){
+
+    const existe = novoCadastros.some((valor) => valor.usuario === usuario)
+    if (existe) {
         alert('Usuario já cadastrado')
         return
     } else {
         alert(`usuario cadastrado com sucesso`)
     }
 
-   
-   
+
+
     const cadastro = {
-        usuario:usuario ,
+        usuario: usuario,
         senha: senha,
         recados: []
-      
-        
+
+
     }
 
     novoCadastros.push(cadastro)
@@ -41,9 +41,9 @@ formularioHTML.addEventListener('submit', (evento) => {
     guardarNoLocalStorage('usuarios', novoCadastros)
 
 
-    formularioHTML.reset() 
+    formularioHTML.reset()
 
-    
+
 })
 
 function guardarNoLocalStorage(chave, valor) {
@@ -57,7 +57,7 @@ function buscarDadosDoLocalStorage(chave) {
 
     const dadoJSON = localStorage.getItem(chave)
 
-    if(dadoJSON) {
+    if (dadoJSON) {
         const listaDados = JSON.parse(dadoJSON)
         return listaDados
     } else {

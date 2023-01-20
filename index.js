@@ -10,17 +10,17 @@ formularioHTML.addEventListener('submit', (evento) => {
 
     const usuarioEncontrado = novoCadastros.find((valor) => valor.usuario === usuario && valor.senha === senha)
 
-    if(!usuarioEncontrado){
+    if (!usuarioEncontrado) {
         alert('Usuario ou senha estão incorretos ou não existem')
         return
-    } else{
+    } else {
 
         guardarNoLocalStorage('usuarioLogado', usuarioEncontrado)
-        
-     window.location.href = "./recados.html"
+
+        window.location.href = "./recados.html"
     }
 
-    
+
 
 })
 
@@ -35,7 +35,7 @@ function buscarDadosDoLocalStorage(chave) {
 
     const dadoJSON = localStorage.getItem(chave)
 
-    if(dadoJSON) {
+    if (dadoJSON) {
         const listaDados = JSON.parse(dadoJSON)
         return listaDados
     } else {

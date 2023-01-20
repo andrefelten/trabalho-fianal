@@ -1,14 +1,17 @@
+const modaelEditar = new bootstrap.Modal('#modalEditar')
+
 const usuarioLogado = buscarDadosDoLocalStorage('usuarioLogado')
 
 document.addEventListener('DOMContentLoaded', () => {
-    if(!usuarioLogado.usuario) {
-        window.location.href="./index.html"
+    if (!usuarioLogado.usuario) {
+        window.location.href = "./index.html"
     } else {
         montrarRegistroNoHTML()
     }
 })
 
-const listaRecados = usuarioLogado.recados
+
+
 
 const formularioHTML = document.getElementById('formulario-cadastro')
 
@@ -25,36 +28,36 @@ formularioHTML.addEventListener('submit', (evento) => {
         recadoEscrito: recadoEscrito,
     }
 
-    listaRecados.push(novoCadastro)
+    usuarioLogado.recados.push(novoCadastro)
 
-    salvarRecados()
-   
 
-    
+
+
+
     formularioHTML.reset()
 
-    montrarRegistroNoHTML() 
+    montrarRegistroNoHTML()
 
     guardarNoLocalStorage('usuarioLogado', usuarioLogado)
 
 
 
 
-    })
+})
 
-    function montrarRegistroNoHTML() {
-        tbody.innerHTML = ''
-    
-        listaRecados.forEach((valor,index) => {
-            tbody.innerHTML += `
-                    <tr class="meusrecados" id="${index}">
+function montrarRegistroNoHTML() {
+    tbody.innerHTML = ''
+
+    usuarioLogado.recados.forEach((valor, index) => {
+        tbody.innerHTML += `
+                    <tr id="${index}" class="meusrecados">
                             
                             <td class="index" > ${index + 1} </td>
                             <td class ="valorDescricao">${valor.descricao}</td>
                             <td class = "recadoEscrito">${valor.recadoEscrito}
-                            <td>
-                                <button class = "apagar">Apagar</button>
-                                <button class = "editar">Editar</button>
+                            <td class= "botoes">
+                                <button class = "apagar" onclick = "botaoApagar(${index})">Apagar</button>
+                                <button onclick = "editar(${index})" class = "editar" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
                             </td>
                             
                           </tr>
@@ -66,13 +69,13 @@ formularioHTML.addEventListener('submit', (evento) => {
 
 
 
-function salvarRecados(){
+function salvarRecados() {
     const listaUsuario = buscarDadosDoLocalStorage('usuarios')
 
     const acharUsuario = listaUsuario.findIndex((valor) => valor.usuario === usuarioLogado.usuario)
- 
-    listaUsuario[acharUsuario].recados = listaRecados
- 
+
+    listaUsuario[acharUsuario].recados = usuarioLogado.recados
+
     guardarNoLocalStorage('usuarios', listaUsuario)
 }
 
@@ -87,7 +90,7 @@ function buscarDadosDoLocalStorage(chave) {
 
     const dadoJSON = localStorage.getItem(chave)
 
-    if(dadoJSON) {
+    if (dadoJSON) {
         const listaDados = JSON.parse(dadoJSON)
         return listaDados
     } else {
@@ -95,4 +98,60 @@ function buscarDadosDoLocalStorage(chave) {
     }
 }
 
-        
+function botaoApagar(indice) {
+    const recadoApagar = usuarioLogado.recados.filter((valor, index) => {
+        return indice !== index
+    })
+    console.log(recadoApagar)
+    usuarioLogado.recados = recadoApagar
+
+    guardarNoLocalStorage('usuarioLogado', usuarioLogado)
+
+    const linha = document.getElementById(indice)
+    linha.remove()
+
+    montrarRegistroNoHTML()
+
+}
+
+function sair() {
+    salvarRecados()
+    localStorage.removeItem('usuarioLogado')
+    window.location.href = "./index.html"
+}
+
+function editar (index) {
+
+    const descricaoEditar = document.getElementById('descricaoEditar')
+    const recadoEscritoEditar = document.getElementById('recadoEscritoEditar')
+
+    descricaoEditar.value = usuarioLogado.recados[index].descricao
+    recadoEscritoEditar.value = usuarioLogado.recados[index].recadoEscrito
+
+    const recadosFormulario = document.getElementById('cadastro-formulario')
+
+recadosFormulario.addEventListener('submit', (evento) => {
+    evento.preventDefault()
+    
+    usuarioLogado.recados[index].descricao = descricaoEditar.value
+    usuarioLogado.recados[index].recadoEscrito = recadoEscritoEditar.value
+
+   
+   
+   
+    guardarNoLocalStorage('usuarioLogado', usuarioLogado)
+
+    montrarRegistroNoHTML()
+
+   
+    modaelEditar.hide()
+})
+}
+
+
+
+
+
+
+
+

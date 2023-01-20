@@ -11,13 +11,18 @@
     justify-content: center;
     min-height: 100vh;
     background: #267d81;
+    position: relative;
   }
+
+  
   
   .login {
     background:#1b4244;
     border-radius:px;
     width: 1200px;
-    height:600px;
+    height:700px;
+    position: absolute;
+    right: 10px;
   }
   
   .login h2{
@@ -71,7 +76,7 @@
 
 .acao{
   color:white;
-  padding:30px 180px;
+  padding:30px 195px;
   font-size: 20px;
 }
 
@@ -89,7 +94,7 @@
   height: 30px;
   color: white;
   border-radius: 10px;
-  margin-left: 140px;
+  
 
 }
 
@@ -99,23 +104,43 @@
   height: 30px;
   color: white;
   border-radius: 10px;
-
 }
 
+.botoes{
+  padding-left: 157px;
+}
+
+
 .valorDescricao{
-padding: 1px 1px 2px 125px;
-font-size: 25px;
+padding: 1px 1px 2px 118px;
+font-size: 20px;
 }
 
 .recadoEscrito{
-  padding-left:120px;
-  font-size: 25px;
+  padding-left:108px;
+  font-size: 20px;
 }
 
 
+.botao-sair{
+ position: relative;
+ left: 110px;
+ height: 55px;
+ width: 80px;
+ background: #ff4b52;
+ border-radius: 8px;
+ 
+}
+
+.botao-sair-recados{
+  position: absolute;
+  left: 0px;
+}
 
 
-
+.meu-body{
+  background: #267d81;
+}
 
 
 
