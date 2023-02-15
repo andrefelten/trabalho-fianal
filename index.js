@@ -2,6 +2,9 @@ const novoCadastros = buscarDadosDoLocalStorage('usuarios')
 
 const formularioHTML = document.getElementById('formulario-login')
 
+const feedback = document.getElementById('feedback');
+
+
 formularioHTML.addEventListener('submit', (evento) => {
     evento.preventDefault()
 
@@ -11,7 +14,7 @@ formularioHTML.addEventListener('submit', (evento) => {
     const usuarioEncontrado = novoCadastros.find((valor) => valor.usuario === usuario && valor.senha === senha)
 
     if (!usuarioEncontrado) {
-        alert('Usuario ou senha estão incorretos ou não existem')
+        showFeedback(false, "Usuario ou senha estão incorretos ou não existem")
         return
     } else {
 
@@ -43,3 +46,13 @@ function buscarDadosDoLocalStorage(chave) {
     }
 
 }  
+
+function showFeedback(success, mensagem){
+    if(!success){
+        feedback.classList.add('text-bg-danger')
+        feedback.children[0].children[0].innerHTML = mensagem
+    }
+
+    const toastFeedback = new bootstrap.Toast(feedback);
+    toastFeedback.show();
+}

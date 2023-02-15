@@ -5,20 +5,38 @@
   font-family: sans-serif;
 }
 
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #267d81;
+main{
+  background-color: #267d81;
+  height: 100vh;
+  width: 100vw;
 }
+  
+
 
 .login {
   background:#1b4244;
   border-radius: 10px;
-  width: 400px;
+  width: 300px;
   padding: 40px;
+    animation: logo 9s ease;
+  
 } 
+
+@keyframes logo{
+  0%{
+       opacity: 0; 
+      bottom: 10px;
+    }
+   
+  100%{
+      opacity: 1; 
+      bottom: 200px; 
+      
+  }
+}
+
+
+
 
 .login h2{
   margin-bottom: 30px;
@@ -92,6 +110,10 @@ body{
   color: #172031;
 }
 
+.toast-position{
+  top: 50px;
+  right: 50px;
+}
 
 
 

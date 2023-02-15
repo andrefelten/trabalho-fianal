@@ -3,6 +3,8 @@ const novoCadastros = buscarDadosDoLocalStorage('usuarios')
 
 const formularioHTML = document.getElementById('formulario-cadastro');
 
+const feedback = document.getElementById('feedback');
+
 
 formularioHTML.addEventListener('submit', (evento) => {
     evento.preventDefault()
@@ -12,19 +14,23 @@ formularioHTML.addEventListener('submit', (evento) => {
     const verificacao = document.getElementById('varificacao').value
 
     if (senha !== verificacao) {
-        alert('As senhas devem ser iguais')
+        showFeedback(false,"As senhas devem ser iguais")
         return
+        
     }
-
+    
 
 
     const existe = novoCadastros.some((valor) => valor.usuario === usuario)
     if (existe) {
-        alert('Usuario já cadastrado')
+        showFeedback(false, "Usuario já cadastrado")
         return
     } else {
-        alert(`usuario cadastrado com sucesso`)
+        showFeedback(false, "usuario cadastrado com sucesso")
+        window.location.href = './index.html'
     }
+
+    
 
 
 
@@ -35,6 +41,7 @@ formularioHTML.addEventListener('submit', (evento) => {
 
 
     }
+
 
     novoCadastros.push(cadastro)
 
@@ -65,3 +72,13 @@ function buscarDadosDoLocalStorage(chave) {
     }
 
 }  
+
+function showFeedback(success, mensagem){
+    if(!success){
+        feedback.classList.add('text-bg-primary')
+        feedback.children[0].children[0].innerHTML = mensagem
+    }
+
+    const toastFeedback = new bootstrap.Toast(feedback);
+    toastFeedback.show();
+}

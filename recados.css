@@ -5,13 +5,19 @@
     font-family: sans-serif;
   }
   
-  body{
+  /* body{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: #267d81;
     position: relative;
+  } */
+
+  main{
+    background-color:#267d81 ;
+    width: 100vw;
+    height: 100vh;
   }
 
   
@@ -121,21 +127,15 @@ font-size: 20px;
   font-size: 20px;
 }
 
-
+/* 
 .botao-sair{
- position: relative;
- left: 110px;
- height: 55px;
- width: 80px;
- background: #ff4b52;
- border-radius: 8px;
+/*  position: relative; */
+/*  left: 120px;
+ border-radius: 10px;
  
-}
+} */ 
 
-.botao-sair-recados{
-  position: absolute;
-  left: 0px;
-}
+/*  */
 
 
 .meu-body{
