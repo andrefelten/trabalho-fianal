@@ -1,65 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" /> 
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
     <title>Tela de Cadastro</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <main
+      class="container-fluid d-flex justify-content-center align-items-center"
+    >
+      <div class="row">
+        <form
+          class="login col-xs-12 col-md-6 col-lg-4"
+          id="formulario-cadastro"
+        >
+          <h2>Cadastre-se</h2>
+          <div class="box-user">
+            <input type="text" name="usuario" id="usuario" required />
+            <label> Usuário</label>
+          </div>
+          <div class="box-user">
+            <input type="password" name="senha" id="senha" required />
+            <label> Senha</label>
+          </div>
+          <div class="box-user">
+            <input
+              type="password"
+              name="verificacao"
+              id="varificacao"
+              required
+            />
+            <label> Repetir Senha</label>
+          </div>
+          <div>
+            <a href="./index.html" class="forget"> Ir para Login</a>
+          </div>
 
-    <main class="container-fluid d-flex justify-content-center align-items-center">
-        <div class="row">
-            <form class="login col-xs-12 col-md-6 col-lg-4" id="formulario-cadastro">
-                <h2>Cadastre-se</h2>
-                <div class="box-user">
-                    <input type="text" name="usuario" id="usuario" required>
-                    <label> Usuário</label>
-                </div>
-                <div class="box-user">
-                    <input type="password" name="senha" id="senha" required>
-                    <label> Senha</label>
-                </div>
-                <div class="box-user">
-                    <input type="password" name="verificacao" id="varificacao" required>
-                    <label> Repetir Senha</label>
-                </div>
-                <div>
-                    <a href="./index.html" class="forget"> Ir para Login</a>
-                </div>
-        
-                <input type="submit" value="Cadastre-se" class="btn">
-            </form>
-        </div>
-       
+          <input type="submit" value="Cadastre-se" class="btn" />
+        </form>
+      </div>
     </main>
 
-   
-
-    <div id="feedback" class="toast align-items-center position-fixed toast-position" role="alert" aria-live="assertive" aria-atomic="true" >
-        <div class="">
-          <div class="toast-body">
-            
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+    <div
+      id="feedback"
+      class="toast align-items-center position-fixed toast-position"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="">
+        <div class="toast-body"></div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
     </div>
 
-
-    
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-        
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./cadastro.js"></script>
-</body>
-
+  </body>
 </html>

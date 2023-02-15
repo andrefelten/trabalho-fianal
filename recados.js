@@ -50,14 +50,14 @@ function montrarRegistroNoHTML() {
 
     usuarioLogado.recados.forEach((valor, index) => {
         tbody.innerHTML += `
-                    <tr id="${index}" class="meusrecados">
+                    <tr id="${index}" class="row text-center mt-4">
                             
-                            <td class="index" > ${index + 1} </td>
-                            <td class ="valorDescricao">${valor.descricao}</td>
-                            <td class = "recadoEscrito">${valor.recadoEscrito}
-                            <td class= "botoes">
-                                <button class = "apagar" onclick = "botaoApagar(${index})">Apagar</button>
-                                <button onclick = "editar(${index})" class = "editar" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                            <td class="col-1  fs-4" > ${index + 1} </td>
+                            <td class ="col-4 fs-4">${valor.descricao}</td>
+                            <td class ="col-5  fs-4">${valor.recadoEscrito}
+                            <td class= "col-2  fs-5">
+                                <button class = "btn btn-outline-light" onclick = "botaoApagar(${index})">Apagar</button>
+                                <button onclick = "editar(${index})" class = "btn btn-outline-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
                             </td>
                             
                           </tr>

@@ -1,147 +1,16 @@
-  *{
+   *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
   }
-  
-  /* body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #267d81;
-    position: relative;
-  } */
+
 
   main{
-    background-color:#267d81 ;
+    background-color:#2c4c4f ;
     width: 100vw;
     height: 100vh;
   }
 
-  
-  
-  .login {
-    background:#1b4244;
-    border-radius:px;
-    width: 1200px;
-    height:700px;
-    position: absolute;
-    right: 10px;
-  }
-  
-  .login h2{
-    margin-bottom: 30px;
-    font-size: 30px;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-   
+
  
-
-  .descri{
-  margin: 2px 120px 2px 80px;
-  width: 250px;
-  height: 35px;
-  border-radius: 10px;
-}
-
-.recados{
-  margin: 1px 150px 2px 15px;
-  width: 350px;
-  height: 35px;
-  border-radius: 10px;
-}
-
-.salva{
-  width: 100px;
-  height: 30px;
-  background-color: #52e660;
-  border-radius: 10px;
-} 
-
-.index{
-  color: white;
-  padding:30px 100px;
-  font-size: 20px;
-}
-
-.relato{
-  color: white;
-  padding:30px 100px;
-  font-size: 20px;
-}
-
-.detalhe{
-  color: white;
-  padding:30px 80px;
-  font-size: 20px;
-}
-
-.acao{
-  color:white;
-  padding:30px 195px;
-  font-size: 20px;
-}
-
-.registros{
-  color: white;
-  margin: 80px;
-  width: 300px; border: 1px solid white;
-
-}
-
-
-.apagar{
-  background-color: red;
-  width: 65px;
-  height: 30px;
-  color: white;
-  border-radius: 10px;
-  
-
-}
-
-.editar{
-  background-color: green;
-  width: 65px;
-  height: 30px;
-  color: white;
-  border-radius: 10px;
-}
-
-.botoes{
-  padding-left: 157px;
-}
-
-
-.valorDescricao{
-padding: 1px 1px 2px 118px;
-font-size: 20px;
-}
-
-.recadoEscrito{
-  padding-left:108px;
-  font-size: 20px;
-}
-
-/* 
-.botao-sair{
-/*  position: relative; */
-/*  left: 120px;
- border-radius: 10px;
- 
-} */ 
-
-/*  */
-
-
-.meu-body{
-  background: #267d81;
-}
-
-
 
 
